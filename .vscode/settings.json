@@ -1,0 +1,9 @@
+{
+    "qt.installPath": "/usr",
+    "qt.qmakePath": "/usr/bin/qmake6",
+    "qt.helpPath": "/usr/share/doc/qt6-doc",
+    "qt.autoDetect": true,
+    "files.associations": {
+        "qaudioformat": "cpp"
+    }
+}

@@ -1,0 +1,5 @@
+# Hashes of file build rules.
+e643371659a64adc1a676880c8712883 CMakeFiles/TicTacVersus_autogen
+e643371659a64adc1a676880c8712883 CMakeFiles/TicTacVersus_autogen_timestamp_deps
+dc39644ef3dd3933dba4050697035136 TicTacVersus_autogen/EWIEGA46WW/qrc_resorces.cpp
+1e07f9a770ac3d0f4cdbf43c33695b57 TicTacVersus_autogen/timestamp

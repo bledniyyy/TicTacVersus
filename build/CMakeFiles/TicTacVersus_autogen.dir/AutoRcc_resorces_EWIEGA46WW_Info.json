@@ -1,0 +1,36 @@
+{
+	"BUILD_DIR" : "/home/b/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/TicTakVersus/build/TicTacVersus_autogen",
+	"CMAKE_BINARY_DIR" : "/home/b/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/TicTakVersus/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/b/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/TicTakVersus/build",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/b/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/TicTakVersus",
+	"CMAKE_SOURCE_DIR" : "/home/b/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/TicTakVersus",
+	"GENERATOR" : "Unix Makefiles",
+	"INCLUDE_DIR" : "/home/b/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/TicTakVersus/build/TicTacVersus_autogen/include",
+	"INPUTS" : 
+	[
+		"/home/b/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/TicTakVersus/music/mainMenu.mp3",
+		"/home/b/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/TicTakVersus/sounds/mikrofoni.mp3",
+		"/home/b/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/TicTakVersus/sounds/yaZdesChistoPofanu.mp3",
+		"/home/b/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/TicTakVersus/sounds/penis.mp3",
+		"/home/b/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/TicTakVersus/sounds/mudilaETC.mp3",
+		"/home/b/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/TicTakVersus/sounds/umenyaTojeEstPtichki.mp3",
+		"/home/b/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/TicTakVersus/sounds/govno.mp3",
+		"/home/b/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/TicTakVersus/sounds/opaaOXXY.mp3",
+		"/home/b/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/TicTakVersus/sounds/blyadina.mp3",
+		"/home/b/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/TicTakVersus/sounds/zalupa.mp3",
+		"/home/b/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/TicTakVersus/sounds/her.mp3",
+		"/home/b/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/TicTakVersus/sounds/pobedilOXYMIRON.mp3",
+		"/home/b/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/TicTakVersus/sounds/parallelogram.mp3",
+		"/home/b/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/TicTakVersus/sounds/raundOXXY.mp3"
+	],
+	"LOCK_FILE" : "/home/b/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/TicTakVersus/build/CMakeFiles/TicTacVersus_autogen.dir/AutoRcc_resorces_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "resorces" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_resorces.cpp",
+	"RCC_EXECUTABLE" : "/usr/lib/qt6/libexec/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/home/b/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/TicTakVersus/build/CMakeFiles/TicTacVersus_autogen.dir/AutoRcc_resorces_EWIEGA46WW_Used.txt",
+	"SOURCE" : "/home/b/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/TicTakVersus/resorces.qrc",
+	"VERBOSITY" : 0
+}

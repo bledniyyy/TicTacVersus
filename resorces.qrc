@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/music">
+        <file alias="mainMenu.mp3">music/mainMenu.mp3</file>
+    </qresource>
+    <qresource prefix="/sounds">
+        <file alias="blyadina.mp3">sounds/blyadina.mp3</file>
+        <file alias="govno.mp3">sounds/govno.mp3</file>
+        <file alias="her.mp3">sounds/her.mp3</file>
+        <file alias="mikrofoni.mp3">sounds/mikrofoni.mp3</file>
+        <file alias="mudilaETC.mp3">sounds/mudilaETC.mp3</file>
+        <file alias="opaaOXXY.mp3">sounds/opaaOXXY.mp3</file>
+        <file alias="penis.mp3">sounds/penis.mp3</file>
+        <file alias="pobedilOXYMIRON.mp3">sounds/pobedilOXYMIRON.mp3</file>
+        <file alias="umenyaTojeEstPtichki.mp3">sounds/umenyaTojeEstPtichki.mp3</file>
+        <file alias="zalupa.mp3">sounds/zalupa.mp3</file>
+        <file alias="raundOXXY.mp3">sounds/raundOXXY.mp3</file>
+        <file alias="yaZdesChistoPofanu.mp3">sounds/yaZdesChistoPofanu.mp3</file>
+        <file alias="parallelogram.mp3">sounds/parallelogram.mp3</file>
+    </qresource>
+</RCC>

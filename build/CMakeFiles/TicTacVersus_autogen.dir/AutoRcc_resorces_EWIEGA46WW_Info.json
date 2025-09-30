@@ -9,6 +9,7 @@
 	"INPUTS" : 
 	[
 		"/home/b/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/TicTakVersus/music/mainMenu.mp3",
+		"/home/b/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/TicTakVersus/images/menuText.png",
 		"/home/b/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/TicTakVersus/sounds/mikrofoni.mp3",
 		"/home/b/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/TicTakVersus/sounds/yaZdesChistoPofanu.mp3",
 		"/home/b/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/TicTakVersus/sounds/penis.mp3",
@@ -21,7 +22,8 @@
 		"/home/b/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/TicTakVersus/sounds/her.mp3",
 		"/home/b/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/TicTakVersus/sounds/pobedilOXYMIRON.mp3",
 		"/home/b/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/TicTakVersus/sounds/parallelogram.mp3",
-		"/home/b/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/TicTakVersus/sounds/raundOXXY.mp3"
+		"/home/b/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/TicTakVersus/sounds/raundOXXY.mp3",
+		"/home/b/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/TicTakVersus/styles/style.qss"
 	],
 	"LOCK_FILE" : "/home/b/\u0420\u0430\u0431\u043e\u0447\u0438\u0439 \u0441\u0442\u043e\u043b/TicTakVersus/build/CMakeFiles/TicTacVersus_autogen.dir/AutoRcc_resorces_EWIEGA46WW_Lock.lock",
 	"MULTI_CONFIG" : false,

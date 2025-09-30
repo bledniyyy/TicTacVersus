@@ -67,6 +67,8 @@
         "thread": "cpp",
         "typeinfo": "cpp",
         "variant": "cpp",
-        "qmediaplayer": "cpp"
+        "qmediaplayer": "cpp",
+        "qapplication": "cpp",
+        "qmenubar": "cpp"
     }
 }

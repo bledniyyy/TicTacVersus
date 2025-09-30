@@ -79,6 +79,7 @@ TicTacVersus_autogen/timestamp: CMakeFiles/TicTacVersus.dir/compiler_depend.ts
 TicTacVersus_autogen/EWIEGA46WW/qrc_resorces.cpp: /home/b/Рабочий\ стол/TicTakVersus/resorces.qrc
 TicTacVersus_autogen/EWIEGA46WW/qrc_resorces.cpp: CMakeFiles/TicTacVersus_autogen.dir/AutoRcc_resorces_EWIEGA46WW_Info.json
 TicTacVersus_autogen/EWIEGA46WW/qrc_resorces.cpp: /home/b/Рабочий\ стол/TicTakVersus/music/mainMenu.mp3
+TicTacVersus_autogen/EWIEGA46WW/qrc_resorces.cpp: /home/b/Рабочий\ стол/TicTakVersus/images/menuText.png
 TicTacVersus_autogen/EWIEGA46WW/qrc_resorces.cpp: /home/b/Рабочий\ стол/TicTakVersus/sounds/mikrofoni.mp3
 TicTacVersus_autogen/EWIEGA46WW/qrc_resorces.cpp: /home/b/Рабочий\ стол/TicTakVersus/sounds/yaZdesChistoPofanu.mp3
 TicTacVersus_autogen/EWIEGA46WW/qrc_resorces.cpp: /home/b/Рабочий\ стол/TicTakVersus/sounds/penis.mp3
@@ -92,6 +93,7 @@ TicTacVersus_autogen/EWIEGA46WW/qrc_resorces.cpp: /home/b/Рабочий\ сто
 TicTacVersus_autogen/EWIEGA46WW/qrc_resorces.cpp: /home/b/Рабочий\ стол/TicTakVersus/sounds/pobedilOXYMIRON.mp3
 TicTacVersus_autogen/EWIEGA46WW/qrc_resorces.cpp: /home/b/Рабочий\ стол/TicTakVersus/sounds/parallelogram.mp3
 TicTacVersus_autogen/EWIEGA46WW/qrc_resorces.cpp: /home/b/Рабочий\ стол/TicTakVersus/sounds/raundOXXY.mp3
+TicTacVersus_autogen/EWIEGA46WW/qrc_resorces.cpp: /home/b/Рабочий\ стол/TicTakVersus/styles/style.qss
 TicTacVersus_autogen/EWIEGA46WW/qrc_resorces.cpp: /usr/lib/qt6/libexec/rcc
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir="/home/b/Рабочий стол/TicTakVersus/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Automatic RCC for resorces.qrc"
 	/usr/bin/cmake -E cmake_autorcc /home/b/Рабочий\ стол/TicTakVersus/build/CMakeFiles/TicTacVersus_autogen.dir/AutoRcc_resorces_EWIEGA46WW_Info.json 

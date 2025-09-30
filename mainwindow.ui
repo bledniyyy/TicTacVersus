@@ -26,14 +26,14 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>TicTacVesrsus</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="verticalLayoutWidget_2">
     <property name="geometry">
      <rect>
       <x>130</x>
-      <y>210</y>
+      <y>300</y>
       <width>261</width>
       <height>111</height>
      </rect>
@@ -56,6 +56,14 @@
       <layout class="QVBoxLayout" name="verticalLayout_4">
        <item>
         <widget class="QPushButton" name="StartButton">
+         <property name="font">
+          <font>
+           <family>Pixelify Sans</family>
+           <pointsize>12</pointsize>
+           <italic>false</italic>
+           <bold>true</bold>
+          </font>
+         </property>
          <property name="text">
           <string>Начать игру</string>
          </property>
@@ -82,11 +90,16 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>80</y>
+      <x>70</x>
+      <y>100</y>
       <width>361</width>
       <height>381</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
     </property>
     <property name="title">
      <string/>

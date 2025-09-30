@@ -1,6 +1,7 @@
 #include <vector>
 #include <QDebug>
 #include <QMetaEnum>
+#include <algorithm>
 
 enum class Player {
     X = 1,
@@ -17,11 +18,6 @@ private:
     std::vector<std::vector<int>> field;
 
 public:
- 
-
-   
-
-
     Tiktaktoe() {
         field = std::vector<std::vector<int>>(3, std::vector<int>(3, 0));
     }
@@ -87,6 +83,14 @@ public:
             return true;
         }
         return false; 
+    }
+
+    bool checkAllCells() {
+        return std::all_of(field.begin(), field.end(), [](const std::vector<int>& row) {
+            return std::all_of(row.begin(), row.end(), [](int cell) {
+                return cell != 0;
+            });
+        });
     }
 };
 

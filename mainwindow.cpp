@@ -1,5 +1,5 @@
 #include <iostream>
-#include "mainwindow.h"
+#include "mainwindow.h" 
 #include "./ui_mainwindow.h"
 
 // Глобальные переменные (лучше сделать членами класса)
@@ -7,7 +7,7 @@ Tiktaktoe game;
 Player player = Player::X;
 bool win = false;
 bool NewGame = true;
-int counterOXXY = 2;
+int counterOXXY = 1;
 int counterSLAVA = 1;
 int packOXXY;
 int packSLAVA;
@@ -16,8 +16,8 @@ int packSLAVA;
 // Добавь эту функцию если её нет
 QString stringToPlayer(Player player) {
     switch(player) {
-        case Player::X: return "X";
-        case Player::Y: return "Y";
+        case Player::X: return "OXXY";
+        case Player::Y: return "SLAVA KPSS";
         default: return "Unknown";
     }
 }
@@ -30,8 +30,15 @@ MainWindow::MainWindow(QWidget *parent)
     , audioOutput_phra(new QAudioOutput(this))
     , backgroundMusic(new QMediaPlayer(this))
     , audioOutput(new QAudioOutput(this))
+    , menuText (new QLabel(this))
 {
     ui->setupUi(this);
+    QPixmap pixmap(":/images/menuText.png");
+    menuText->setPixmap(pixmap);
+    menuText->setScaledContents(true);
+    menuText->setGeometry(20, 30, 490, 350); // x, y, width, height
+    menuText->setAttribute(Qt::WA_TransparentForMouseEvents);
+    menuText->show(); //!!!!!!!!!!!!!!!!
     ui->OffMusic->setText("🔊");
     OXXY->setAudioOutput(audioOutput_phra);
     SLAVA->setAudioOutput(audioOutput_phra);
@@ -87,6 +94,7 @@ void MainWindow::startButtonSlot() {
         resetField();
         ui->StartButton->hide();
         ui->OffMusic->hide();
+        menuText->hide();
         ui->gameFieldBox->show();
         backgroundMusic->stop();
         qDebug() << "hello" << "\n"; 
@@ -143,11 +151,16 @@ void MainWindow::clickOnField() {
             
             
             if (game.CheckWin(static_cast<int>(player))) {
-               
-                returnWinner(player);
+                win = true;
+                returnWinner(player, win);
                 return;
             }
             
+            if (game.checkAllCells()) {
+                win = false;
+                returnWinner(player, win);
+                return;
+            }
             
             player = (player == Player::X) ? Player::Y : Player::X;
             if (player == Player::X) counterOXXY++;
@@ -169,13 +182,44 @@ void MainWindow::connectingFields() {
     connect(ui->cell_2_2, &QToolButton::clicked, this, &MainWindow::clickOnField);
 }
 
-void MainWindow::returnWinner(Player player) {
+void MainWindow::returnWinner(Player player, bool win) {
+    if (win) {
     ui->gameFieldBox->hide();
     
     QLabel *winLabel = new QLabel(this);
-    winLabel->move(197, 280);
+    winLabel->move(177, 200);
+    winLabel->resize(300, 100);
     winLabel->setText("WINS: " + stringToPlayer(player));
+    winLabel->setStyleSheet("color: #00FFCC; font-weight: regular; font-family: PixelifySans");
+
+    QFont font;
+    font.setPointSize(25);
+    font.setBold(true);
+    winLabel->setFont(font);
+    winLabel->show();
     
+    QPushButton *returnToMenu = new QPushButton("Вернуться в меню", this);
+    returnToMenu->move(150, 310);
+    returnToMenu->resize(210, 50);
+    returnToMenu->show();
+    
+    NewGame = false;
+    win = false;
+    
+    connect(returnToMenu, &QPushButton::clicked, this, [this, returnToMenu, winLabel](){
+        qDebug() << "returnToMenuSlot\n"; 
+        returnToMenuSlot(returnToMenu, winLabel);
+    });
+    }
+    else {
+        ui->gameFieldBox->hide();
+    
+    QLabel *winLabel = new QLabel(this);
+    winLabel->move(177, 200);
+    winLabel->resize(300, 100);
+    winLabel->setText("DRAW");
+    winLabel->setStyleSheet("color: #00FFCC; font-weight: regular; font-family: PixelifySans");
+
     QFont font;
     font.setPointSize(20);
     font.setBold(true);
@@ -183,8 +227,8 @@ void MainWindow::returnWinner(Player player) {
     winLabel->show();
     
     QPushButton *returnToMenu = new QPushButton("Вернуться в меню", this);
-    returnToMenu->move(188, 310);
-    returnToMenu->resize(120, 35);
+    returnToMenu->move(150, 310);
+    returnToMenu->resize(210, 50);
     returnToMenu->show();
     
     NewGame = false;
@@ -193,6 +237,7 @@ void MainWindow::returnWinner(Player player) {
         qDebug() << "returnToMenuSlot\n"; 
         returnToMenuSlot(returnToMenu, winLabel);
     });
+    }
 }
 
 void MainWindow::resetField() {
@@ -237,6 +282,7 @@ void MainWindow::returnToMenuSlot(QPushButton* returnButton, QLabel* label) {
     qDebug() << "NewGame - false\n"; 
     backgroundMusic->play();
     qDebug() << "NebackgroundMusicwGame - play\n";
+    menuText->show();
 }
 
 void MainWindow::OXXY_1_SOUNDS(int counter) {

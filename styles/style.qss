@@ -1,0 +1,48 @@
+QMainWindow {
+    background-color: #0F0F0F;
+}
+
+QWidget#centralWidget {
+    background-color: #0F0F0F;
+}
+
+QPushButton {
+    background-color: #111111;
+    color: #00FFCC;
+    border: 2px solid #00FFCC;
+    border-radius: 12px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-family: Consolas, monospace;
+}
+
+QPushButton:hover {
+    background-color: #00FFCC;
+    color: #111111;
+}
+
+QPushButton:pressed {
+    background-color: #009977;
+    color: white;
+}
+
+QToolButton {
+    background-color: #111111;
+    color: #00FFCC;
+    border: 2px solid #00FFCC;
+    border-radius: 12px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-family: Consolas, monospace;
+}
+
+QToolButton:hover {
+    background-color: #00FFCC;
+    color: #111111;
+}
+
+QToolButton:pressed {
+    background-color: #009977;
+    color: white;
+}
+

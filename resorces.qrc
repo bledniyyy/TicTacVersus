@@ -17,4 +17,10 @@
         <file alias="yaZdesChistoPofanu.mp3">sounds/yaZdesChistoPofanu.mp3</file>
         <file alias="parallelogram.mp3">sounds/parallelogram.mp3</file>
     </qresource>
+    <qresource prefix="/styles">
+        <file alias="style.qss">styles/style.qss</file>
+    </qresource>
+    <qresource prefix="/images">
+        <file alias="menuText.png">images/menuText.png</file>
+    </qresource>
 </RCC>

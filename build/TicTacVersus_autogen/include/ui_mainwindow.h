@@ -66,7 +66,7 @@ public:
         centralwidget->setObjectName("centralwidget");
         verticalLayoutWidget_2 = new QWidget(centralwidget);
         verticalLayoutWidget_2->setObjectName("verticalLayoutWidget_2");
-        verticalLayoutWidget_2->setGeometry(QRect(130, 210, 261, 111));
+        verticalLayoutWidget_2->setGeometry(QRect(130, 300, 261, 111));
         verticalLayout_5 = new QVBoxLayout(verticalLayoutWidget_2);
         verticalLayout_5->setObjectName("verticalLayout_5");
         verticalLayout_5->setContentsMargins(0, 0, 0, 0);
@@ -78,6 +78,12 @@ public:
         verticalLayout_4->setObjectName("verticalLayout_4");
         StartButton = new QPushButton(verticalLayoutWidget_2);
         StartButton->setObjectName("StartButton");
+        QFont font;
+        font.setFamilies({QString::fromUtf8("Pixelify Sans")});
+        font.setPointSize(12);
+        font.setBold(true);
+        font.setItalic(false);
+        StartButton->setFont(font);
 
         verticalLayout_4->addWidget(StartButton);
 
@@ -97,7 +103,10 @@ public:
         gameFieldBox = new QGroupBox(centralwidget);
         gameFieldBox->setObjectName("gameFieldBox");
         gameFieldBox->setEnabled(true);
-        gameFieldBox->setGeometry(QRect(60, 80, 361, 381));
+        gameFieldBox->setGeometry(QRect(70, 100, 361, 381));
+        QFont font1;
+        font1.setPointSize(12);
+        gameFieldBox->setFont(font1);
         verticalLayout_6 = new QVBoxLayout(gameFieldBox);
         verticalLayout_6->setObjectName("verticalLayout_6");
         gameField = new QGridLayout();
@@ -186,7 +195,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "TicTacVesrsus", nullptr));
         StartButton->setText(QCoreApplication::translate("MainWindow", "\320\235\320\260\321\207\320\260\321\202\321\214 \320\270\320\263\321\200\321\203", nullptr));
         OffMusic->setText(QCoreApplication::translate("MainWindow", "...", nullptr));
         gameFieldBox->setTitle(QString());

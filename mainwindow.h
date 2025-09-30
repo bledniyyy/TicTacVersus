@@ -1,6 +1,5 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
-
+#ifndef MainWindow_H
+#define MainWindow_H
 #include <QMainWindow>
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
@@ -38,12 +37,13 @@ private:
     QMediaPlayer *WIN;
     QAudioOutput *audioOutput_phra;
     QAudioOutput *audioOutput;
+    QLabel *menuText;
 
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     void connectingFields();
-    void returnWinner(Player player);
+    void returnWinner(Player player, bool win);
     void resetField();
     void resetGame();
     void OXXY_1_SOUNDS(int counter);
@@ -60,4 +60,4 @@ private slots:
 
 
 };
-#endif // MAINWINDOW_H
+#endif // MainWindow_H

@@ -22,5 +22,10 @@
     </qresource>
     <qresource prefix="/images">
         <file alias="menuText.png">images/menuText.png</file>
+<<<<<<< HEAD
+=======
+        <file alias="oxxy_lico.png">images/oxxy_lico.png</file>
+        <file alias="slava_lico.png">images/slava_lico.png</file>
+>>>>>>> cce12dd (фикс окси, иконки, стили)
     </qresource>
 </RCC>

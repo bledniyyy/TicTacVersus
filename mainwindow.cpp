@@ -31,8 +31,16 @@ MainWindow::MainWindow(QWidget *parent)
     , backgroundMusic(new QMediaPlayer(this))
     , audioOutput(new QAudioOutput(this))
     , menuText (new QLabel(this))
+<<<<<<< HEAD
 {
     ui->setupUi(this);
+=======
+
+{
+    ui->setupUi(this);
+    QIcon oxxyIcon(":/images/oxxy_lico.png");
+    QIcon slavaIcon(":/images/slava_lico.png");
+>>>>>>> cce12dd (фикс окси, иконки, стили)
     QPixmap pixmap(":/images/menuText.png");
     menuText->setPixmap(pixmap);
     menuText->setScaledContents(true);
@@ -113,9 +121,7 @@ void MainWindow::clickOnField() {
     int random;
     QToolButton *button = qobject_cast<QToolButton*>(sender());
     if (!button) return;
-    
     qDebug() << "Нажата кнопка:" << button->objectName();
-    
     QString name = button->objectName();
     if (name.startsWith("cell_")) {
         QStringList parts = name.split('_');
@@ -132,6 +138,12 @@ void MainWindow::clickOnField() {
             button->setEnabled(false);
             qDebug() << packOXXY << "ЩАС БУДЕТ ИГРАТЬ ОКСИ\n";
             if (player == Player::X) {
+                QIcon oxxyIcon(":/images/oxxy_lico.png");
+                oxxyIcon.addPixmap(oxxyIcon.pixmap(150, QIcon::Normal), QIcon::Disabled);
+                button->setIcon(oxxyIcon);
+                
+                button->setIconSize(QSize(200, 200));
+
                 switch (packOXXY)
                 {
                 case 1: {
@@ -148,6 +160,14 @@ void MainWindow::clickOnField() {
                 }
 
             }
+            else {
+                QIcon slavaIcon(":/images/slava_lico.png");
+                slavaIcon.addPixmap(slavaIcon.pixmap(150, QIcon::Normal), QIcon::Disabled);
+                button->setIcon(slavaIcon);
+                button->setIconSize(QSize(200, 200));
+
+            }
+            
             
             
             if (game.CheckWin(static_cast<int>(player))) {

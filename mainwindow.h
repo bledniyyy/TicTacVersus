@@ -15,6 +15,8 @@
 #include <QFont>
 #include <QList>
 #include <QFile>
+#include <QIcon>
+#include <QPixmap>
 #include <QUrl>
 #include <QRandomGenerator>
 #include "tictaktoe.h"

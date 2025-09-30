@@ -1,5 +1,0 @@
-/home/b/Рабочий стол/TicTakVersus/build/CMakeFiles/TicTacVersus.dir
-/home/b/Рабочий стол/TicTakVersus/build/CMakeFiles/edit_cache.dir
-/home/b/Рабочий стол/TicTakVersus/build/CMakeFiles/rebuild_cache.dir
-/home/b/Рабочий стол/TicTakVersus/build/CMakeFiles/TicTacVersus_autogen_timestamp_deps.dir
-/home/b/Рабочий стол/TicTakVersus/build/CMakeFiles/TicTacVersus_autogen.dir

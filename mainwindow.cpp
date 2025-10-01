@@ -8,7 +8,7 @@ Player player = Player::X;
 bool win = false;
 bool NewGame = true;
 int counterOXXY = 1;
-int counterSLAVA = 1;
+int counterSLAVA = 0;
 int packOXXY;
 int packSLAVA;
 
@@ -31,16 +31,9 @@ MainWindow::MainWindow(QWidget *parent)
     , backgroundMusic(new QMediaPlayer(this))
     , audioOutput(new QAudioOutput(this))
     , menuText (new QLabel(this))
-<<<<<<< HEAD
+    , audioOutput_phraSLAVA(new QAudioOutput(this))
 {
     ui->setupUi(this);
-=======
-
-{
-    ui->setupUi(this);
-    QIcon oxxyIcon(":/images/oxxy_lico.png");
-    QIcon slavaIcon(":/images/slava_lico.png");
->>>>>>> cce12dd (фикс окси, иконки, стили)
     QPixmap pixmap(":/images/menuText.png");
     menuText->setPixmap(pixmap);
     menuText->setScaledContents(true);
@@ -49,8 +42,9 @@ MainWindow::MainWindow(QWidget *parent)
     menuText->show(); //!!!!!!!!!!!!!!!!
     ui->OffMusic->setText("🔊");
     OXXY->setAudioOutput(audioOutput_phra);
-    SLAVA->setAudioOutput(audioOutput_phra);
+    SLAVA->setAudioOutput(audioOutput_phraSLAVA);
     audioOutput_phra->setVolume(0.5);
+    audioOutput_phraSLAVA->setVolume(0.5);
     qDebug() << "Initializing music player...";
     
     // Проверка существования ресурса
@@ -107,7 +101,7 @@ void MainWindow::startButtonSlot() {
         backgroundMusic->stop();
         qDebug() << "hello" << "\n"; 
         packOXXY = QRandomGenerator::global()->bounded(1,3);
-        //packSLAVA = QRandomGenerator::global()->bounded(1,3);
+        packSLAVA = QRandomGenerator::global()->bounded(1,3);
     }
     else {
         resetGame();
@@ -166,6 +160,21 @@ void MainWindow::clickOnField() {
                 button->setIcon(slavaIcon);
                 button->setIconSize(QSize(200, 200));
 
+                switch (packSLAVA)
+                {
+                case 1: {
+                            MainWindow::SLAVA_1_SOUNDS(counterSLAVA);
+                            break;
+                        }
+                case 2: {
+                            MainWindow::SLAVA_2_SOUNDS(counterSLAVA);
+                            break;
+                        }
+                
+                default:
+                    break;
+                }
+
             }
             
             
@@ -206,6 +215,22 @@ void MainWindow::returnWinner(Player player, bool win) {
     if (win) {
     ui->gameFieldBox->hide();
     
+    QAudioOutput *winnerAudioOutput = new QAudioOutput(this);
+    QMediaPlayer *winnerAudio = new QMediaPlayer(this);
+    winnerAudio->setAudioOutput(winnerAudioOutput);
+    winnerAudioOutput->setVolume(0.5);
+
+    if (player == Player::X) {
+        winnerAudio->setSource(QUrl("qrc:/sounds/pobedilOXYMIRON.mp3"));
+        winnerAudio->play();
+    }
+
+    if (player == Player::Y) {
+        winnerAudio->setSource(QUrl("qrc:/sounds/50gnoiniy.mp3"));
+        winnerAudio->play();
+    }
+    
+
     QLabel *winLabel = new QLabel(this);
     winLabel->move(177, 200);
     winLabel->resize(300, 100);
@@ -270,6 +295,7 @@ void MainWindow::resetField() {
     for (QToolButton *button : buttons) {
         button->setText("");
         button->setEnabled(true);
+        button->setIcon(QIcon());
     }
 }
 
@@ -277,7 +303,7 @@ void MainWindow::resetGame() {
     resetField();
     game = Tiktaktoe();
     player = Player::X;
-    NewGame = true;
+    NewGame = false;
     
     ui->gameFieldBox->show();
     ui->StartButton->hide();
@@ -380,6 +406,84 @@ void  MainWindow::OXXY_2_SOUNDS(int counter) {
         break;
     }
 }
+
+void MainWindow::SLAVA_1_SOUNDS(int counter) {
+    SLAVA->setAudioOutput(audioOutput_phra);
+    switch (counter)
+    {
+    case 1: { 
+                
+                SLAVA->setSource(QUrl("qrc:/sounds/slavaKPSS.mp3"));
+                SLAVA->play();
+                break;
+            }
+
+    case 2: {
+                SLAVA->setSource(QUrl("qrc:/sounds/yaNeOksimirion.mp3")); 
+                SLAVA->play();
+                break;
+            }
+
+    case 3: {
+                SLAVA->setSource(QUrl("qrc:/sounds/geolokaciyaKlitora.mp3"));
+                SLAVA->play();
+                break;
+            }
+    case 4: {
+                SLAVA->setSource(QUrl("qrc:/sounds/perdetNaZajigalku.mp3"));
+                SLAVA->play();
+                break;
+            }
+    case 5: {
+               SLAVA->setSource(QUrl("qrc:/sounds/msdohnuNoyNeimom.mp3")); 
+               SLAVA->play();
+               break;
+            }
+    
+    default:
+        break;
+    }
+}
+
+void MainWindow::SLAVA_2_SOUNDS(int counter) {
+    SLAVA->setAudioOutput(audioOutput_phra);
+    switch (counter)
+    {
+    case 1: { 
+                
+                SLAVA->setSource(QUrl("qrc:/sounds/slavaKPSS.mp3"));
+                SLAVA->play();
+                break;
+            }
+
+    case 2: {
+                SLAVA->setSource(QUrl("qrc:/sounds/chepuhaEbanaya.mp3")); 
+                SLAVA->play();
+                break;
+            }
+
+    case 3: {
+                SLAVA->setSource(QUrl("qrc:/sounds/ebanayaLisayaKarlica.mp3"));
+                SLAVA->play();
+                break;
+            }
+    case 4: {
+                SLAVA->setSource(QUrl("qrc:/sounds/pornuhabezbab.mp3"));
+                SLAVA->play();
+                break;
+            }
+    case 5: {
+               SLAVA->setSource(QUrl("qrc:/sounds/msdohnuNoyNeimom.mp3")); 
+               SLAVA->play();
+               break;
+            }
+    
+    default:
+        break;
+    }
+}
+
+
 
 void MainWindow::ToggleMusicSlot() {
   if (audioOutput->volume() > 0.0) {

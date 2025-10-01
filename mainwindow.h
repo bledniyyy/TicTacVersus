@@ -40,6 +40,7 @@ private:
     QAudioOutput *audioOutput_phra;
     QAudioOutput *audioOutput;
     QLabel *menuText;
+    QAudioOutput *audioOutput_phraSLAVA;
 
 public:
     MainWindow(QWidget *parent = nullptr);
@@ -50,6 +51,8 @@ public:
     void resetGame();
     void OXXY_1_SOUNDS(int counter);
     void OXXY_2_SOUNDS(int counter);
+    void SLAVA_1_SOUNDS(int counter);
+    void SLAVA_2_SOUNDS(int counter);
 
     
 private slots:

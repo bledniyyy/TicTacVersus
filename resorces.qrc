@@ -16,16 +16,22 @@
         <file alias="raundOXXY.mp3">sounds/raundOXXY.mp3</file>
         <file alias="yaZdesChistoPofanu.mp3">sounds/yaZdesChistoPofanu.mp3</file>
         <file alias="parallelogram.mp3">sounds/parallelogram.mp3</file>
+        <file alias="slavaKPSS.mp3">sounds/slavaKPSS.mp3</file>
+        <file alias="perdetNaZajigalku.mp3">sounds/perdetNaZajigalku.mp3</file>
+        <file alias="yaNeOksimirion.mp3">sounds/yaNeOksimirion.mp3</file>
+        <file alias="geolokaciyaKlitora.mp3">sounds/geolokaciyaKlitora.mp3</file>
+        <file alias="pornuhabezbab.mp3">sounds/pornuhabezbab.mp3</file>
+        <file alias="chepuhaEbanaya.mp3">sounds/chepuhaEbanaya.mp3</file>
+        <file alias="ebanayaLisayaKarlica.mp3">sounds/ebanayaLisayaKarlica.mp3</file>
+        <file alias="sdohnuNoyNeimom.mp3">sounds/sdohnuNoyNeimom.mp3</file>
+        <file alias="50gnoiniy.mp3">sounds/50gnoiniy.mp3</file>
     </qresource>
     <qresource prefix="/styles">
         <file alias="style.qss">styles/style.qss</file>
     </qresource>
     <qresource prefix="/images">
         <file alias="menuText.png">images/menuText.png</file>
-<<<<<<< HEAD
-=======
         <file alias="oxxy_lico.png">images/oxxy_lico.png</file>
         <file alias="slava_lico.png">images/slava_lico.png</file>
->>>>>>> cce12dd (фикс окси, иконки, стили)
     </qresource>
 </RCC>

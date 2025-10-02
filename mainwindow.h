@@ -19,6 +19,8 @@
 #include <QPixmap>
 #include <QUrl>
 #include <QRandomGenerator>
+#include <memory>
+#include <QScopedPointer>
 #include "tictaktoe.h"
 
 QT_BEGIN_NAMESPACE
@@ -41,6 +43,16 @@ private:
     QAudioOutput *audioOutput;
     QLabel *menuText;
     QAudioOutput *audioOutput_phraSLAVA;
+    
+    Tiktaktoe game;
+    Player player = Player::X;
+    bool win = false;
+    bool NewGame = true;
+    int counterOXXY = 1;
+    int counterSLAVA = 0;
+    int packOXXY;
+    int packSLAVA;
+    
 
 public:
     MainWindow(QWidget *parent = nullptr);

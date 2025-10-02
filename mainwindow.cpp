@@ -2,23 +2,11 @@
 #include "mainwindow.h" 
 #include "./ui_mainwindow.h"
 
-// Глобальные переменные (лучше сделать членами класса)
-Tiktaktoe game;
-Player player = Player::X;
-bool win = false;
-bool NewGame = true;
-int counterOXXY = 1;
-int counterSLAVA = 0;
-int packOXXY;
-int packSLAVA;
-
-
-// Добавь эту функцию если её нет
 QString stringToPlayer(Player player) {
     switch(player) {
         case Player::X: return "OXXY";
         case Player::Y: return "SLAVA KPSS";
-        default: return "Unknown";
+        default: return "DRAW";
     }
 }
 
@@ -32,6 +20,7 @@ MainWindow::MainWindow(QWidget *parent)
     , audioOutput(new QAudioOutput(this))
     , menuText (new QLabel(this))
     , audioOutput_phraSLAVA(new QAudioOutput(this))
+
 {
     ui->setupUi(this);
     QPixmap pixmap(":/images/menuText.png");
@@ -81,6 +70,7 @@ MainWindow::MainWindow(QWidget *parent)
     backgroundMusic->play();
     
     connect(ui->StartButton, &QPushButton::clicked, this, &MainWindow::startButtonSlot);
+    
     connect(ui->OffMusic, &QToolButton::clicked, this, &MainWindow::ToggleMusicSlot);
     ui->gameFieldBox->hide();
     connectingFields();
@@ -96,7 +86,9 @@ void MainWindow::startButtonSlot() {
         resetField();
         ui->StartButton->hide();
         ui->OffMusic->hide();
+        menuText->clear();
         menuText->hide();
+        
         ui->gameFieldBox->show();
         backgroundMusic->stop();
         qDebug() << "hello" << "\n"; 
@@ -105,6 +97,8 @@ void MainWindow::startButtonSlot() {
     }
     else {
         resetGame();
+        menuText->clear();
+        menuText->hide();
         backgroundMusic->stop();
         packOXXY = QRandomGenerator::global()->bounded(1,3);
         packSLAVA = QRandomGenerator::global()->bounded(1,3);
@@ -193,7 +187,7 @@ void MainWindow::clickOnField() {
             
             player = (player == Player::X) ? Player::Y : Player::X;
             if (player == Player::X) counterOXXY++;
-            else counterSLAVA++; 
+            else counterSLAVA++;
         }
     }
 }
@@ -232,8 +226,16 @@ void MainWindow::returnWinner(Player player, bool win) {
     
 
     QLabel *winLabel = new QLabel(this);
-    winLabel->move(177, 200);
-    winLabel->resize(300, 100);
+    if (player == Player::X) {
+        winLabel->move(170, 200);
+        winLabel->resize(300, 100);
+    }
+
+    if (player == Player::Y) {
+        winLabel->move(120, 200);
+        winLabel->resize(300, 100);
+    }
+    
     winLabel->setText("WINS: " + stringToPlayer(player));
     winLabel->setStyleSheet("color: #00FFCC; font-weight: regular; font-family: PixelifySans");
 
@@ -260,13 +262,13 @@ void MainWindow::returnWinner(Player player, bool win) {
         ui->gameFieldBox->hide();
     
     QLabel *winLabel = new QLabel(this);
-    winLabel->move(177, 200);
+    winLabel->move(187, 200);
     winLabel->resize(300, 100);
     winLabel->setText("DRAW");
-    winLabel->setStyleSheet("color: #00FFCC; font-weight: regular; font-family: PixelifySans");
+    winLabel->setStyleSheet("color: #00FFCC; font-weight: regular; font-family: PixelifySans; font-size: 42");
 
     QFont font;
-    font.setPointSize(20);
+    font.setPointSize(35);
     font.setBold(true);
     winLabel->setFont(font);
     winLabel->show();
@@ -328,6 +330,7 @@ void MainWindow::returnToMenuSlot(QPushButton* returnButton, QLabel* label) {
     qDebug() << "NewGame - false\n"; 
     backgroundMusic->play();
     qDebug() << "NebackgroundMusicwGame - play\n";
+    menuText->setPixmap(QPixmap(":/images/menuText.png"));
     menuText->show();
 }
 
@@ -336,13 +339,14 @@ void MainWindow::OXXY_1_SOUNDS(int counter) {
     switch (counter)
     {
     case 1: { 
-                
+                qDebug() << "первая фраза опааа\n";
                 OXXY->setSource(QUrl("qrc:/sounds/opaaOXXY.mp3"));
                 OXXY->play();
                 break;
             }
 
     case 2: {
+                qDebug() << "первая фраза у меня тоже есть птички\n" << counter;
                 OXXY->setSource(QUrl("qrc:/sounds/umenyaTojeEstPtichki.mp3"));
                 OXXY->play();
                 break;
@@ -408,7 +412,7 @@ void  MainWindow::OXXY_2_SOUNDS(int counter) {
 }
 
 void MainWindow::SLAVA_1_SOUNDS(int counter) {
-    SLAVA->setAudioOutput(audioOutput_phra);
+    SLAVA->setAudioOutput(audioOutput_phraSLAVA);
     switch (counter)
     {
     case 1: { 
@@ -446,7 +450,7 @@ void MainWindow::SLAVA_1_SOUNDS(int counter) {
 }
 
 void MainWindow::SLAVA_2_SOUNDS(int counter) {
-    SLAVA->setAudioOutput(audioOutput_phra);
+    SLAVA->setAudioOutput(audioOutput_phraSLAVA);
     switch (counter)
     {
     case 1: { 
@@ -488,7 +492,7 @@ void MainWindow::SLAVA_2_SOUNDS(int counter) {
 void MainWindow::ToggleMusicSlot() {
   if (audioOutput->volume() > 0.0) {
     audioOutput->setVolume(0.0);
-    ui->OffMusic->setText("🔇"); // или QIcon
+    ui->OffMusic->setText("🔇"); 
 } else {
     audioOutput->setVolume(0.5);
     ui->OffMusic->setText("🔊");
